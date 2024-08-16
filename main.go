@@ -10,10 +10,6 @@ import (
 	"strings"
 )
 
-type FullName struct {
-	FirstName string `xml:"first_name"`
-	LastName string `xml:"last_name"`
-}
 
 type Users struct {
 	Row []struct {
