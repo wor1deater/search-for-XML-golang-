@@ -17,3 +17,13 @@ SearchServer принимает GET-параметры:
 Дополнительно:
 
 - Данные для работы лежат в файле `dataset.xml`
+
+# Результаты:
+Запрос: http://127.0.0.1:8080/?query=ipsum&order_field=Id&order_by=-1&limit=8&offset=2
+![alt text](src/filter3.png)
+
+Запрос: http://127.0.0.1:8080/?query=Lorem&order_field=Age&order_by=1&limit=8&offset=2
+![alt text](src/filter1.png)
+
+Запрос: http://127.0.0.1:8080/?query=ipsum&order_field=Age&order_by=-1&limit=8&offset=2
+![alt text](src/filter2.png)
