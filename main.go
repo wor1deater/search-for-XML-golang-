@@ -36,6 +36,9 @@ type SearchTask struct {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
+	/* 
+		Собираем GET-params из запроса и передаем их в функцию
+	*/
 	query := r.FormValue("query")
 	orderField := r.FormValue("order_field")
 	orderBy := r.FormValue("order_by")
@@ -55,6 +58,9 @@ func handler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	/* 
+		Ставим handler на главную страницу
+	*/
 	http.HandleFunc("/", handler)
 	fmt.Println("Starting server at :8080")
 	http.ListenAndServe(":8080", nil)
@@ -62,6 +68,10 @@ func main() {
 
 
 func SearchServer(task SearchTask, data *Users, w http.ResponseWriter) {
+	/* 
+		Собираем нужные параметры и сортируем данные, согласно запросу
+	*/
+
 	type AgeStruct struct {
 		Key int
 		Value int
@@ -169,6 +179,9 @@ func SearchServer(task SearchTask, data *Users, w http.ResponseWriter) {
 
 
 func readFromXml(xmlData []byte) *Users{
+	/* 
+		Читаем XML
+	*/
 	v := new(Users)
 	err := xml.Unmarshal(xmlData, v)
 	if err != nil {
